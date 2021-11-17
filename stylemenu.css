@@ -1,0 +1,124 @@
+:root{
+    --bg_color: #7e7e7e;
+    --box_color: #e6e6e6;
+    --bg_header: #181a1b;
+    --bg_title: #d12b2b;
+    --text_color: white;
+    --bg_hover: red;
+    --bg_nav: #333;
+    --bg_drop: #f9f9f9;
+}
+
+
+.header{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg_header);
+}
+
+.logo{
+    padding: 20px;
+    color: var(--text_color);
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#btn-menu{
+    display: none;
+}
+
+label{
+    display: none;
+    position: absolute;
+    padding: 10px;
+    color:var(--text_color);
+    font-size: 50px;
+    cursor: pointer;
+    
+}
+
+nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg_nav) ;
+    overflow: hidden;
+}
+
+li{
+    float: left;
+}
+
+nav li a, .btn-drop{
+    display: inline-block;
+    color: var(--text_color);
+    text-decoration: none;
+    text-align: center;
+    padding: 20px 16px;
+}
+
+li a:hover, .dropdow:hover, .btn-drop:hover{
+    transition: .6s;
+    background-color: var(--bg_hover);
+}
+
+.drop-content{
+    display: none;
+    position: absolute;
+    background-color: var(--bg_drop);
+    min-width: 160px;
+    z-index: 1;
+}
+
+.drop-content a{
+    display: block;
+    color: black;
+    text-align: left;
+    padding: 14px 16px;
+}
+
+.drop-content a:hover{
+    background-color: #e6e6e6;
+}
+
+.dropdow:hover .drop-content{
+    display: block;
+}
+
+@media(max-width: 800px){
+    .header{
+        text-align: center;
+    }
+    label{
+        display: block;
+    }
+
+    nav{
+        display: none;
+    }
+
+    #btn-menu:checked ~ nav{
+        display: block;
+    }
+
+    nav li{
+        float: none;
+    }
+
+    nav .drop-content{
+        position: relative;
+    }
+
+    nav .drop-content a{
+        text-align: center;
+    }
+}
+
+@media(max-width: 375px){
+    .logo{
+        font-size: 30px;
+    }
+    label{
+        font-size: 40px;
+    }
+}
